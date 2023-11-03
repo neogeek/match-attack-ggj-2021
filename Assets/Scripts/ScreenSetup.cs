@@ -1,3 +1,4 @@
+#if UNITY_STANDALONE
 using UnityEngine;
 
 public static class ScreenSetup
@@ -7,15 +8,9 @@ public static class ScreenSetup
     public static void SetResolution()
     {
 
-        if (!SystemInfo.deviceType.Equals(DeviceType.Desktop))
-        {
-
-            return;
-
-        }
-
         Screen.SetResolution(1050, 1350, false);
 
     }
 
 }
+#endif
