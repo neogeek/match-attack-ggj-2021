@@ -31,6 +31,17 @@ public struct Tile
 
     }
 
+    public bool Equals(Tile other)
+    {
+        return name == other.name && Equals(sprite, other.sprite) && type == other.type && damage == other.damage &&
+               requiresAmmo == other.requiresAmmo && requiresSpecialAmmo == other.requiresSpecialAmmo;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(name, sprite, (int)type, damage, requiresAmmo, requiresSpecialAmmo);
+    }
+
 }
 
 [Serializable]
